@@ -32,8 +32,8 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>(); //Bu sonradan elave olundu, ProductsController-de IoC Container.
-            services.AddSingleton<IProductDal, EfProductDal>();  //Bu da yuxaridakinin eynisidir.
+           /* services.AddSingleton<IProductService, ProductManager>();*/ //Bu sonradan elave olundu, ProductsController-de IoC Container.
+            /*services.AddSingleton<IProductDal, EfProductDal>();*/  //Bu da yuxaridakinin eynisidir.
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
