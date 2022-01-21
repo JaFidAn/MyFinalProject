@@ -15,7 +15,7 @@ namespace Business.Constants
         public static string MaintenanceTime = "Təmir zamanı";
         public static string ProductListed = "Məhsullar Listələndi.";
         public static string ProductListedByCategoryId = "Mehsul Kateqoriye gore Listelendi";
-        public static string CategoryLimitExceeded = "Izace verilen (15) Kategoqi sayi tamamlanmishdir";
+        public static string CategoryLimitExceeded = "Icaze verilen (15) Kategoqi sayi tamamlanmishdir";
         public static string ProductNameAlreadyExists = "Bu adla mehsul bazada movcuddur";
         public static string CountOfCategoryError = "Bir kateqoride en choxu 10 mehsul ola biler";
         public static string AuthorizationDenied = "Yetkin yok";

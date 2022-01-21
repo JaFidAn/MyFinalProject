@@ -43,7 +43,7 @@ namespace WebAPI
             /* services.AddSingleton<IProductService, ProductManager>();*/ //Bu sonradan elave olundu, ProductsController-de IoC Container.
             /*services.AddSingleton<IProductDal, EfProductDal>();*/  //Bu da yuxaridakinin eynisidir.
 
-
+            services.AddCors();  //fronetnd-de icaze uchun
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -80,6 +80,10 @@ namespace WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
             }
+
+            app.ConfigureCustomExceptionMiddleware(); //butun sistemi try catch etmek uchun. Bax Extension papkasina
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()); //frontend uchun
 
             app.UseHttpsRedirection();
 

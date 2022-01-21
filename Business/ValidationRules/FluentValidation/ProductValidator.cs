@@ -14,10 +14,10 @@ namespace Business.ValidationRules.FluentValidation
         {
             RuleFor(p => p.ProductName).NotEmpty().WithMessage("Bos olmaz");
             RuleFor(p => p.ProductName).MinimumLength(2);
-            RuleFor(p => p.UnitPrice).NotEmpty();
-            RuleFor(p => p.UnitPrice).GreaterThan(0);
-            RuleFor(p => p.UnitPrice).GreaterThanOrEqualTo(10).When(p => p.CategoryId == 1);
-            //RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Məhsul A hərfi ilə başlamalıdır!"); //Özündən olmayan əlavə bir metod düzəldə bilərsən. Metod aşağıda
+            RuleFor(p => p.UnitPrice).NotEmpty().WithMessage("Bos olmaz"); ;
+            RuleFor(p => p.UnitPrice).GreaterThan(0).WithMessage("0 olmaz"); ;
+            RuleFor(p => p.UnitPrice).GreaterThanOrEqualTo(10).When(p => p.CategoryId == 1).WithMessage("Bu kateqoriyada məhsulun qiyməti 10 dan kiçik ola bilməz");
+            RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Məhsul A hərfi ilə başlamalıdır!"); //Özündən olmayan əlavə bir metod düzəldə bilərsən. Metod aşağıda
         }
 
         private bool StartWithA(string arg)
